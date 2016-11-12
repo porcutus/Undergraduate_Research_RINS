@@ -1,0 +1,74 @@
+###########################################################################
+#
+# Configuration file for RINS command line run
+#
+# Please give the Whole Path of a file, and do not include space in file names
+#
+# example as follows
+#
+# Please fill all the required parameters
+#
+###########################################################################
+
+
+# file format and names
+# file format can be either "fasta" or "fastq"
+
+file_format = fasta
+
+# if pair-end then "pair_end = 1", else, "pair_end = 0"
+# if pair-end, privide file names for both ends, and leave singlelane_filename as NA
+# else, provide file name of the single end and leave rightlane/leftlane_filename as NA
+
+pair_end = 1
+
+leftlane_filename = /NFSShare/neil/Temp_lab/testset_forkun_1.fa
+rightlane_filename = /NFSShare/neil/Temp_lab/testset_forkun_2.fa
+singlelane_filename = NA
+
+
+# email notification
+
+mailto  = b00901176@ntu.edu.tw
+
+
+# reference files
+blat_reference = /NFSShare/neil/Temp_lab/rins/indexes/rins_virus_db/
+virus_add_sim.fa
+bowtie_index_human = /NFSShare/neil/Temp_lab/rins/indexes/hg18.fa
+
+
+# scripts and executable directories
+
+scripts_directory = /NFSShare/neil/Temp_lab/rins/bin/
+blat_bin = /NFSShare/neil/Temp_lab/blat
+
+bowtie_bin         = /usr/local/bin/bowtie2
+bowtie_build_bin  = /usr/local/bin/bowtie2-build
+bowtie_threads  = 6
+bowtie_mismatch = 3
+
+trinity_script = /data/NGSTools/trinityrnaseq_r20131110/Trinity.pl
+paired_fragment_length = 300
+min_contig_length = 300
+trinity_threads =  6
+
+
+blastn_bin = /usr/bin/blastn
+blastn_index_human = /NFSShare/neil/Temp_lab/rins/indexes/hg18
+blastn_index_non_human = /NFSShare/neil/Temp_lab/rins/indexes/rins_virus_db/virus_add_sim
+blastn_evalue_thrd = 0.05
+
+# similarity_thrd shoud between 0.8 - 1.0
+similarity_thrd = 0.8 
+
+# modifiable parameters
+
+iteration = 2
+raw_read_length = 100
+chop_read_length = 25
+minIdentity = 80
+compress_ratio_thrd = 0.5
+
+
+
